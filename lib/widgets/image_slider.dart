@@ -44,7 +44,7 @@ class ImageSlider extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CircleAvatar(
-                      backgroundColor: Colors.black26,
+                      backgroundColor: Colors.black,
                       radius: 5,
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
