@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
+import 'package:first_assignment/widgets/navbar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 
 class CustomNavbar extends StatefulWidget {
+  List<NavbarItem> navbarItem;
+  CustomNavbar({required this.navbarItem});
   @override
   State<CustomNavbar> createState() => _CustomNavbarState();
 }
@@ -26,18 +29,26 @@ class _CustomNavbarState extends State<CustomNavbar> {
       height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          navbarItems(FontAwesome.home, "Home", index: 0),
-          navbarItems(Icons.favorite, "Favorites", index: 1),
-          navbarItems(Icons.language_outlined, "NearBy", index: 2),
-          navbarItems(Icons.notifications_on_outlined, "Notifications",
-              index: 3),
-        ],
+        children: widget.navbarItem.map((e) {
+          return navbarItems(
+            iconData: e.iconData,
+            label: e.label,
+            index: widget.navbarItem.indexOf(e),
+          );
+        }).toList(),
+        // [
+        //   navbarItems(FontAwesome.home, "Home", index: 0),
+        //   navbarItems(Icons.favorite, "Favorites", index: 1),
+        //   navbarItems(Icons.language_outlined, "NearBy", index: 2),
+        //   navbarItems(Icons.notifications_on_outlined, "Notifications",
+        //       index: 3),
+        // ],
       ),
     );
   }
 
-  Widget navbarItems(IconData icon, String label, {int index = 0}) {
+  Widget navbarItems(
+      {required IconData iconData, required String label, required int index}) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -56,7 +67,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
                 height: 40,
                 child: Stack(
                   alignment: AlignmentDirectional.center,
-                  overflow: Overflow.visible,
+                  clipBehavior: Clip.none,
                   children: [
                     Positioned(
                       top: _isSelected(index) ? -25 : 0,
@@ -72,7 +83,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
                             backgroundColor: Theme.of(context).primaryColor,
                             radius: 18,
                             child: Icon(
-                              icon,
+                              iconData,
                               color: Colors.white,
                             ),
                           ),

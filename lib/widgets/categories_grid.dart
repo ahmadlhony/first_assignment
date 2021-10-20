@@ -1,11 +1,11 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, must_be_immutable
 
-import 'package:first_assignment/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 
 class CategoryGrid extends StatelessWidget {
-  final _category;
-  CategoryGrid(this._category);
+  var categoryName;
+  List<Widget> categoryItems;
+  CategoryGrid({required this.categoryName, required this.categoryItems});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +20,7 @@ class CategoryGrid extends StatelessWidget {
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Text(
-                  _category,
+                  categoryName,
                   style: TextStyle(
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w900,
@@ -41,16 +41,14 @@ class CategoryGrid extends StatelessWidget {
           ),
           Container(
             height: 180,
-            child: ListView(
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                children: [
-                  CategoryItem("هێمن کامەران هیوا", "٠٧٥٠١١١١١١١", "ئەندازیار"),
-                  CategoryItem("هێمن کامەران هیوا", "٠٧٥٠١١١١١١١", "ئەندازیار"),
-                  CategoryItem("هێمن کامەران هیوا", "٠٧٥٠١١١١١١١", "ئەندازیار"),
-                  CategoryItem("هێمن کامەران هیوا", "٠٧٥٠١١١١١١١", "ئەندازیار"),
-                  CategoryItem("هێمن کامەران هیوا", "٠٧٥٠١١١١١١١", "ئەندازیار"),
-                ]),
+            child: ListView.builder(
+              itemCount: categoryItems.length,
+              itemBuilder: (BuildContext ctx, int index) {
+                return (categoryItems[index]);
+              },
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+            ),
           ),
         ],
       ),

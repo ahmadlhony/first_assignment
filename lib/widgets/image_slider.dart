@@ -3,7 +3,20 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class ImageSlider extends StatelessWidget {
+class ImageSlider extends StatefulWidget {
+  final List<String> imageList;
+  ImageSlider({required this.imageList});
+
+  @override
+  State<ImageSlider> createState() => _ImageSliderState();
+}
+
+class _ImageSliderState extends State<ImageSlider> {
+  var selectedItem = 0;
+  bool isSelected(int index) {
+    return selectedItem == index;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,64 +26,46 @@ class ImageSlider extends StatelessWidget {
         aspectRatio: 16 / 9,
         child: Stack(children: [
           CarouselSlider(
-            items: [
-              Image.asset(
-                'assets/images/first.jpg',
+            items: widget.imageList.map((e) {
+              return Image.asset(
+                e,
                 fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/images/second.jpg',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/images/third.jpg',
-                fit: BoxFit.cover,
-              ),
-            ],
+              );
+            }).toList(),
             options: CarouselOptions(
-              viewportFraction: 1,
-              height: 400,
-              aspectRatio: 16 / 9,
-              enableInfiniteScroll: true,
-            ),
+                viewportFraction: 1,
+                height: 400,
+                aspectRatio: 16 / 9,
+                enableInfiniteScroll: true,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    selectedItem = index;
+                  });
+                }),
           ),
           Positioned(
             bottom: 5,
-            child: Center(
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 20,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 20,
+              child: Align(
+                alignment: Alignment.bottomCenter,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.black,
-                      radius: 5,
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 4,
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.all(3)),
-                    CircleAvatar(
-                      backgroundColor: Colors.black,
-                      radius: 5,
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 4,
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.all(3)),
-                    CircleAvatar(
-                      backgroundColor: Colors.black,
-                      radius: 5,
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 4,
-                      ),
-                    ),
-                  ],
-                ),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: widget.imageList.map((e) {
+                      return Container(
+                        height: 10,
+                        width: 10,
+                        margin: EdgeInsets.symmetric(horizontal: 3),
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1, color: Colors.black),
+                          color: isSelected(widget.imageList.indexOf(e))
+                              ? Theme.of(context).primaryColor
+                              : Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                      );
+                    }).toList()),
               ),
             ),
           )

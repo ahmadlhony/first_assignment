@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
 
@@ -6,7 +6,13 @@ class CategoryItem extends StatelessWidget {
   String name;
   String phoneNumber;
   String career;
-  CategoryItem(this.name, this.phoneNumber, this.career);
+  String imagePath;
+  CategoryItem({
+    required this.name,
+    required this.phoneNumber,
+    required this.career,
+    required this.imagePath,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +25,7 @@ class CategoryItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(25)),
             child: Image.asset(
-              'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+              imagePath,
               height: 150,
               width: 150,
               fit: BoxFit.cover,
