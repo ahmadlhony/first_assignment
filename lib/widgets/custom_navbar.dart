@@ -27,18 +27,17 @@ class _CustomNavbarState extends State<CustomNavbar> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          buildContainerBottomNav(FontAwesome.home, "Home", index: 0),
-          buildContainerBottomNav(Icons.favorite, "Favorites", index: 1),
-          buildContainerBottomNav(Icons.language_outlined, "NearBy", index: 2),
-          buildContainerBottomNav(
-              Icons.notifications_on_outlined, "Notifications",
+          navbarItems(FontAwesome.home, "Home", index: 0),
+          navbarItems(Icons.favorite, "Favorites", index: 1),
+          navbarItems(Icons.language_outlined, "NearBy", index: 2),
+          navbarItems(Icons.notifications_on_outlined, "Notifications",
               index: 3),
         ],
       ),
     );
   }
 
-  Widget buildContainerBottomNav(IconData icon, String label, {int index = 0}) {
+  Widget navbarItems(IconData icon, String label, {int index = 0}) {
     return GestureDetector(
       onTap: () {
         setState(() {
