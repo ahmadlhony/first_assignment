@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:first_assignment/screens/home_screen.dart';
+import 'package:first_assignment/screens/temp_screen.dart';
+import 'package:first_assignment/screens/user_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.blue[50],
       ),
       title: 'First Assignment',
-      home: HomeScreen(),
+      home: TempScreen(),
     );
   }
 }

@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
+import 'package:first_assignment/widgets/app_drawer.dart';
 import 'package:first_assignment/widgets/categories_grid.dart';
 import 'package:first_assignment/widgets/category_item.dart';
-import 'package:first_assignment/widgets/custom_navbar.dart';
+import 'package:first_assignment/widgets/navbar/custom_navbar.dart';
 import 'package:first_assignment/widgets/image_slider.dart';
-import 'package:first_assignment/widgets/navbar_item.dart';
+import 'package:first_assignment/widgets/navbar/navbar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
@@ -15,42 +16,42 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Theme.of(context).backgroundColor,
-      drawer: Drawer(),
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(15),
-          ),
-        ),
-        title: Center(
-          child: Icon(
-            Icons.location_pin,
-            color: Colors.white,
-            size: 30,
-          ),
-        ),
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: Icon(
-              Icons.sort,
-              size: 30,
-            ),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        }),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              size: 30,
-            ),
-          ),
-        ],
-      ),
+      drawer: AppDrawer(),
+      // appBar: AppBar(
+      //   backgroundColor: Theme.of(context).primaryColor,
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.vertical(
+      //       bottom: Radius.circular(15),
+      //     ),
+      //   ),
+      //   title: Center(
+      //     child: Icon(
+      //       Icons.location_pin,
+      //       color: Colors.white,
+      //       size: 30,
+      //     ),
+      //   ),
+      //   leading: Builder(builder: (context) {
+      //     return IconButton(
+      //       icon: Icon(
+      //         Icons.sort,
+      //         size: 30,
+      //       ),
+      //       onPressed: () {
+      //         Scaffold.of(context).openDrawer();
+      //       },
+      //     );
+      //   }),
+      //   actions: [
+      //     IconButton(
+      //       onPressed: () {},
+      //       icon: Icon(
+      //         Icons.search,
+      //         size: 30,
+      //       ),
+      //     ),
+      //   ],
+      // ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

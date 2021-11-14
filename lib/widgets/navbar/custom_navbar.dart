@@ -2,7 +2,6 @@
 
 import 'package:first_assignment/widgets/navbar/navbar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttericon/font_awesome_icons.dart';
 
 class CustomNavbar extends StatefulWidget {
   List<NavbarItem> navbarItem;
