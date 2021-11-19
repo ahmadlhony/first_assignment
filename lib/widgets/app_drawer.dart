@@ -15,9 +15,13 @@ class _AppDrawerState extends State<AppDrawer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        elevation: 0,
+        toolbarHeight: 5,
+      ),
       body: Container(
-        width: MediaQuery.of(context).size.width / 2 + 5,
+        width: MediaQuery.of(context).size.width / 2,
         child: Drawer(
           elevation: 0,
           child: Stack(

@@ -9,51 +9,42 @@ class TempScreen extends StatefulWidget {
 }
 
 class _TempScreenState extends State<TempScreen> {
-  final isDrawerOpen = false;
+  var isDrawerOpen = false;
 
-  GlobalKey<SliderMenuContainerState> _key =
-      new GlobalKey<SliderMenuContainerState>();
+  void drawerHandler() {
+    setState(() {
+      isDrawerOpen = !isDrawerOpen;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        title: Center(
-          child: Icon(
-            Icons.location_pin,
-            color: Colors.white,
-            size: 30,
-          ),
+    return Stack(
+      clipBehavior: Clip.none,
+      // overflow: ,
+      children: [
+        Container(
+          child: AppDrawer(),
         ),
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: Icon(
-              Icons.sort,
-              size: 30,
-            ),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        }),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              size: 30,
-            ),
+        AnimatedContainer(
+          duration: Duration(milliseconds: 400),
+          transform: Matrix4.translationValues(
+            isDrawerOpen ? MediaQuery.of(context).size.width / 2 : 0,
+            0,
+            0,
           ),
-        ],
-      ),
-      body: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          HomeScreen(),
-        ],
-      ),
+          child: isDrawerOpen
+              ? GestureDetector(
+                  child: AbsorbPointer(
+                    absorbing: isDrawerOpen,
+                    child: HomeScreen(drawerHandler),
+                  ),
+                  onTap: drawerHandler,
+                )
+              : HomeScreen(drawerHandler),
+        ),
+      ],
     );
   }
 }
