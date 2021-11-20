@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable
 
+import 'package:first_assignment/screens/user_screen.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -7,17 +8,31 @@ class CategoryItem extends StatelessWidget {
   String phoneNumber;
   String career;
   String imagePath;
+  List<String> images;
   CategoryItem({
     required this.name,
     required this.phoneNumber,
     required this.career,
     required this.imagePath,
+    required this.images,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => UserScreen(
+              name: name,
+              phoneNumber: phoneNumber,
+              career: career,
+              imagePath: imagePath,
+              images: images,
+            ),
+          ),
+        );
+      },
       child: Container(
         margin: EdgeInsets.all(15),
         height: 150,

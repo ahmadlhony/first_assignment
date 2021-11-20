@@ -1,7 +1,6 @@
 import 'package:first_assignment/screens/home_screen.dart';
 import 'package:first_assignment/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 
 class TempScreen extends StatefulWidget {
   @override
@@ -28,7 +27,7 @@ class _TempScreenState extends State<TempScreen> {
           child: AppDrawer(),
         ),
         AnimatedContainer(
-          duration: Duration(milliseconds: 400),
+          duration: Duration(milliseconds: 750),
           transform: Matrix4.translationValues(
             isDrawerOpen ? MediaQuery.of(context).size.width / 2 : 0,
             0,
