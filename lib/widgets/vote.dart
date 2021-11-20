@@ -34,7 +34,7 @@ class _VoteState extends State<Vote> {
               // "Hello",
               style: TextStyle(
                 color: Theme.of(context).primaryColor,
-                fontSize: 19,
+                fontSize: 17,
                 fontFamily: "NRT",
               ),
             ),
@@ -68,7 +68,7 @@ class _VoteState extends State<Vote> {
                   ),
                   Text(
                     "دەنگ بدە",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

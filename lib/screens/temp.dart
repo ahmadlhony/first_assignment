@@ -27,7 +27,7 @@ class _TempScreenState extends State<TempScreen> {
           child: AppDrawer(),
         ),
         AnimatedContainer(
-          duration: Duration(milliseconds: 750),
+          duration: Duration(milliseconds: 1000),
           transform: Matrix4.translationValues(
             isDrawerOpen ? MediaQuery.of(context).size.width / 2 : 0,
             0,
