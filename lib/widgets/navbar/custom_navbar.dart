@@ -26,7 +26,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
           top: Radius.circular(15),
         ),
       ),
-      height: 60,
+      height: 80,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: widget.navbarItem.map((e) {

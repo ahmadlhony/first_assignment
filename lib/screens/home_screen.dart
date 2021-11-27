@@ -2,9 +2,9 @@
 
 import 'package:first_assignment/widgets/categories_grid.dart';
 import 'package:first_assignment/widgets/category_item.dart';
-import 'package:first_assignment/widgets/custom_navbar.dart';
+import 'package:first_assignment/widgets/navbar/custom_navbar.dart';
 import 'package:first_assignment/widgets/image_slider.dart';
-import 'package:first_assignment/widgets/navbar_item.dart';
+import 'package:first_assignment/widgets/navbar/navbar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
