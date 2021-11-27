@@ -1,6 +1,4 @@
-import 'package:first_assignment/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 
 class AppDrawer extends StatefulWidget {
@@ -18,7 +16,7 @@ class _AppDrawerState extends State<AppDrawer> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
-        toolbarHeight: 5,
+        toolbarHeight: 10,
       ),
       body: Container(
         width: MediaQuery.of(context).size.width / 2,
@@ -26,7 +24,7 @@ class _AppDrawerState extends State<AppDrawer> {
           elevation: 0,
           child: Stack(
             children: [
-              ListView(
+              Column(
                 children: [
                   UserInfo(),
                   ListTile(
@@ -151,7 +149,7 @@ class UserInfo extends StatelessWidget {
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
       padding: EdgeInsets.all(10),
-      height: 200,
+      height: 240,
       color: Theme.of(context).primaryColor,
       child: Column(
         children: [

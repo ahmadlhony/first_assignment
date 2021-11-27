@@ -20,7 +20,7 @@ class _ImageSliderState extends State<ImageSlider> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10, top: 67),
+      margin: EdgeInsets.only(bottom: 10, top: 55),
       height: 240,
       child: AspectRatio(
         aspectRatio: 16 / 9,
