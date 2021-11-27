@@ -32,6 +32,7 @@ dependencies:
   carousel_slider: ^4.0.0
   ff_navigation_bar: ^0.1.4
   fluttericon: ^2.0.0
+  flutter_slider_drawer: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,6 +69,7 @@ flutter:
     - assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg
     - assets/images/download.png
     - assets/images/aaaaa.jpg
+    - assets/images/Erbil.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

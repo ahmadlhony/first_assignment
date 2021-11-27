@@ -44,7 +44,7 @@ class CategoryGrid extends StatelessWidget {
             child: ListView.builder(
               itemCount: categoryItems.length,
               itemBuilder: (BuildContext ctx, int index) {
-                return (categoryItems[index]);
+                return categoryItems[index];
               },
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,

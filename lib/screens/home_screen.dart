@@ -10,19 +10,156 @@ import 'package:flutter/rendering.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 
 class HomeScreen extends StatelessWidget {
+  Function drawerHandler;
+  HomeScreen(this.drawerHandler);
+  final List<CategoryItem> bestOfMonth = [
+    CategoryItem(
+      name: "ئەحمەد سەمیر سەلیم",
+      phoneNumber: "٠٧٥٠١١١١١١١",
+      career: "ئەندازیار",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+    CategoryItem(
+      name: "ئەحمەد محەمەد رەئوف",
+      phoneNumber: "٠٧٥١١١٢٨٤٦٤",
+      career: "معلاج طبیعی",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+    CategoryItem(
+      name: "ئەحمەد سەمیر سەلیم",
+      phoneNumber: "٠٧٥٠١١١١١١١",
+      career: "ئەندازیار",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+  ];
+
+  final List<CategoryItem> latest = [
+    CategoryItem(
+      name: "ئەحمەد سەمیر سەلیم",
+      phoneNumber: "٠٧٥٠١١١١١١١",
+      career: "ئەندازیار",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+    CategoryItem(
+      name: "ئەحمەد محەمەد رەئوف",
+      phoneNumber: "٠٧٥١١١٢٨٤٦٤",
+      career: "معلاج طبیعی",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+    CategoryItem(
+      name: "ئەحمەد سەمیر سەلیم",
+      phoneNumber: "٠٧٥٠١١١١١١١",
+      career: "ئەندازیار",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+  ];
+
+  final List<CategoryItem> featured = [
+    CategoryItem(
+      name: "ئەحمەد سەمیر سەلیم",
+      phoneNumber: "٠٧٥٠١١١١١١١",
+      career: "ئەندازیار",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+    CategoryItem(
+      name: "ئەحمەد محەمەد رەئوف",
+      phoneNumber: "٠٧٥١١١٢٨٤٦٤",
+      career: "معلاج طبیعی",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+    CategoryItem(
+      name: "ئەحمەد سەمیر سەلیم",
+      phoneNumber: "٠٧٥٠١١١١١١١",
+      career: "ئەندازیار",
+      imagePath:
+          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      images: [
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
+      ],
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Theme.of(context).backgroundColor,
-      drawer: Drawer(),
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(15),
-          ),
-        ),
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.vertical(
+        //     bottom: Radius.circular(15),
+        //   ),
+        // ),
         title: Center(
           child: Icon(
             Icons.location_pin,
@@ -37,7 +174,7 @@ class HomeScreen extends StatelessWidget {
               size: 30,
             ),
             onPressed: () {
-              Scaffold.of(context).openDrawer();
+              drawerHandler();
             },
           );
         }),
@@ -64,83 +201,14 @@ class HomeScreen extends StatelessWidget {
             ),
             CategoryGrid(
               categoryName: "Best Of Month",
-              categoryItems: [
-                CategoryItem(
-                  name: "ئەحمەد سەمیر سەلیم",
-                  phoneNumber: "٠٧٥٠١١١١١١١",
-                  career: "ئەندازیار",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-                CategoryItem(
-                  name: "ئەحمەد محەمەد رەئوف",
-                  phoneNumber: "٠٧٥١١١٢٨٤٦٤",
-                  career: "معلاج طبیعی",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-                CategoryItem(
-                  name: "ئەحمەد سەمیر سەلیم",
-                  phoneNumber: "٠٧٥٠١١١١١١١",
-                  career: "ئەندازیار",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-              ],
+              categoryItems: bestOfMonth,
             ),
             Divider(thickness: 0.2),
-            CategoryGrid(
-              categoryName: "Latest",
-              categoryItems: [
-                CategoryItem(
-                  name: "ئەحمەد سەمیر سەلیم",
-                  phoneNumber: "٠٧٥٠١١١١١١١",
-                  career: "ئەندازیار",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-                CategoryItem(
-                  name: "ئەحمەد سەمیر سەلیم",
-                  phoneNumber: "٠٧٥٠١١١١١١١",
-                  career: "ئەندازیار",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-                CategoryItem(
-                  name: "ئەحمەد سەمیر سەلیم",
-                  phoneNumber: "٠٧٥٠١١١١١١١",
-                  career: "ئەندازیار",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-              ],
-            ),
+            CategoryGrid(categoryName: "Latest", categoryItems: latest),
             Divider(thickness: 0.2),
             CategoryGrid(
               categoryName: "Featured",
-              categoryItems: [
-                CategoryItem(
-                  name: "ئەحمەد سەمیر سەلیم",
-                  phoneNumber: "٠٧٥٠١١١١١١١",
-                  career: "ئەندازیار",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-                CategoryItem(
-                  name: "ئەحمەد سەمیر سەلیم",
-                  phoneNumber: "٠٧٥٠١١١١١١١",
-                  career: "ئەندازیار",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-                CategoryItem(
-                  name: "ئەحمەد سەمیر سەلیم",
-                  phoneNumber: "٠٧٥٠١١١١١١١",
-                  career: "ئەندازیار",
-                  imagePath:
-                      'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-                ),
-              ],
+              categoryItems: featured,
             ),
             SizedBox(
               height: 20,
