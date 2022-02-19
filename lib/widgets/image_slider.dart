@@ -20,19 +20,7 @@ class _ImageSliderState extends State<ImageSlider> {
   @override
   Widget build(BuildContext context) {
     return Container(
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       margin: EdgeInsets.only(bottom: 10),
-=======
-      margin: EdgeInsets.only(bottom: 10, top: 55),
->>>>>>> 95071490935417b5bcd624f6bc53b409901f2d34
-=======
-      margin: EdgeInsets.only(bottom: 10, top: 55),
->>>>>>> 95071490935417b5bcd624f6bc53b409901f2d34
-=======
-      margin: EdgeInsets.only(bottom: 10, top: 55),
->>>>>>> 95071490935417b5bcd624f6bc53b409901f2d34
       height: 240,
       child: AspectRatio(
         aspectRatio: 16 / 9,
