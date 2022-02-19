@@ -1,8 +1,8 @@
-import 'package:first_assignment/widgets/call_us.dart';
-import 'package:first_assignment/widgets/contact.dart';
-import 'package:first_assignment/widgets/user_information.dart';
-import 'package:first_assignment/widgets/vote.dart';
-import 'package:first_assignment/widgets/work_album.dart';
+import 'package:first_assignment/widgets/user_profile/call_us.dart';
+import 'package:first_assignment/widgets/user_profile/contact.dart';
+import 'package:first_assignment/widgets/user_profile/user_information.dart';
+import 'package:first_assignment/widgets/user_profile/vote.dart';
+import 'package:first_assignment/widgets/user_profile/work_album.dart';
 import 'package:flutter/material.dart';
 
 class UserScreen extends StatelessWidget {

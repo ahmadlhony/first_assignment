@@ -1,193 +1,25 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, must_be_immutable
 
-import 'package:first_assignment/widgets/categories_grid.dart';
-import 'package:first_assignment/widgets/category_item.dart';
+import 'package:first_assignment/dummy_data.dart';
+import 'package:first_assignment/widgets/home_screen_categories/category_item.dart';
+import 'package:first_assignment/widgets/home_screen_categories/categories_grid.dart';
 import 'package:first_assignment/widgets/navbar/custom_navbar.dart';
 import 'package:first_assignment/widgets/image_slider.dart';
 import 'package:first_assignment/widgets/navbar/navbar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
+import '../widgets/custom_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
   Function drawerHandler;
   HomeScreen(this.drawerHandler);
-  final List<CategoryItem> bestOfMonth = [
-    CategoryItem(
-      name: "ئەحمەد سەمیر سەلیم",
-      phoneNumber: "٠٧٥٠١١١١١١١",
-      career: "ئەندازیار",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-    CategoryItem(
-      name: "ئەحمەد محەمەد رەئوف",
-      phoneNumber: "٠٧٥١١١٢٨٤٦٤",
-      career: "معلاج طبیعی",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-    CategoryItem(
-      name: "ئەحمەد سەمیر سەلیم",
-      phoneNumber: "٠٧٥٠١١١١١١١",
-      career: "ئەندازیار",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-  ];
-
-  final List<CategoryItem> latest = [
-    CategoryItem(
-      name: "ئەحمەد سەمیر سەلیم",
-      phoneNumber: "٠٧٥٠١١١١١١١",
-      career: "ئەندازیار",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-    CategoryItem(
-      name: "ئەحمەد محەمەد رەئوف",
-      phoneNumber: "٠٧٥١١١٢٨٤٦٤",
-      career: "معلاج طبیعی",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-    CategoryItem(
-      name: "ئەحمەد سەمیر سەلیم",
-      phoneNumber: "٠٧٥٠١١١١١١١",
-      career: "ئەندازیار",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-  ];
-
-  final List<CategoryItem> featured = [
-    CategoryItem(
-      name: "ئەحمەد سەمیر سەلیم",
-      phoneNumber: "٠٧٥٠١١١١١١١",
-      career: "ئەندازیار",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-    CategoryItem(
-      name: "ئەحمەد محەمەد رەئوف",
-      phoneNumber: "٠٧٥١١١٢٨٤٦٤",
-      career: "معلاج طبیعی",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-    CategoryItem(
-      name: "ئەحمەد سەمیر سەلیم",
-      phoneNumber: "٠٧٥٠١١١١١١١",
-      career: "ئەندازیار",
-      imagePath:
-          'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      images: [
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-        'assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg',
-      ],
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      // extendBodyBehindAppBar: true,
       backgroundColor: Theme.of(context).backgroundColor,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Theme.of(context).primaryColor,
-        // shape: RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.vertical(
-        //     bottom: Radius.circular(15),
-        //   ),
-        // ),
-        title: Center(
-          child: Icon(
-            Icons.location_pin,
-            color: Colors.white,
-            size: 30,
-          ),
-        ),
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: Icon(
-              Icons.sort,
-              size: 30,
-            ),
-            onPressed: () {
-              drawerHandler();
-            },
-          );
-        }),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              size: 30,
-            ),
-          ),
-        ],
-      ),
+      appBar: CustomAppBar(drawerHandler: drawerHandler),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -201,14 +33,15 @@ class HomeScreen extends StatelessWidget {
             ),
             CategoryGrid(
               categoryName: "Best Of Month",
-              categoryItems: bestOfMonth,
+              categoryItems: DummyData.bestOfMonth,
             ),
             Divider(thickness: 0.2),
-            CategoryGrid(categoryName: "Latest", categoryItems: latest),
+            CategoryGrid(
+                categoryName: "Latest", categoryItems: DummyData.latest),
             Divider(thickness: 0.2),
             CategoryGrid(
               categoryName: "Featured",
-              categoryItems: featured,
+              categoryItems: DummyData.featured,
             ),
             SizedBox(
               height: 20,

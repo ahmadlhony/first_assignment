@@ -27,22 +27,23 @@ class _TempScreenState extends State<TempScreen> {
           child: AppDrawer(),
         ),
         AnimatedContainer(
-          duration: Duration(milliseconds: 1000),
-          transform: Matrix4.translationValues(
-            isDrawerOpen ? MediaQuery.of(context).size.width / 2 : 0,
-            0,
-            0,
-          ),
-          child: isDrawerOpen
-              ? GestureDetector(
-                  child: AbsorbPointer(
-                    absorbing: isDrawerOpen,
-                    child: HomeScreen(drawerHandler),
-                  ),
-                  onTap: drawerHandler,
-                )
-              : HomeScreen(drawerHandler),
-        ),
+            duration: Duration(milliseconds: 500),
+            transform: Matrix4.translationValues(
+              isDrawerOpen ? width / 2 : 0,
+              0,
+              0,
+            ),
+            child: HomeScreen(drawerHandler)
+            // isDrawerOpen
+            //     ? GestureDetector(
+            //         child: AbsorbPointer(
+            //           absorbing: isDrawerOpen,
+            //           child: HomeScreen(drawerHandler),
+            //         ),
+            //         onTap: drawerHandler,
+            //       )
+            //     : HomeScreen(drawerHandler),
+            ),
       ],
     );
   }

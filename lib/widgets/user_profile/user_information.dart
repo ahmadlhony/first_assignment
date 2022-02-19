@@ -1,4 +1,4 @@
-import 'package:first_assignment/widgets/user_is_favorite.dart';
+import './user_is_favorite.dart';
 import 'package:flutter/material.dart';
 
 class UserInformation extends StatelessWidget {
