@@ -25,7 +25,7 @@ class _UserIsFavoriteState extends State<UserIsFavorite> {
           width: widget.width * 0.16,
           height: 30,
           decoration: BoxDecoration(
-            color: isFavorite ? Colors.white : Theme.of(context).primaryColor,
+            color: Theme.of(context).primaryColor,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15),
               bottomLeft: Radius.circular(15),
@@ -33,8 +33,8 @@ class _UserIsFavoriteState extends State<UserIsFavorite> {
           ),
           child: Center(
               child: Icon(
-            Icons.favorite,
-            color: isFavorite ? Theme.of(context).primaryColor : Colors.white,
+            isFavorite ? Icons.favorite : Icons.favorite_border_outlined,
+            color: Colors.white,
           ))),
     );
   }
