@@ -16,7 +16,7 @@ class _AppDrawerState extends State<AppDrawer> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
-        toolbarHeight: 10,
+        toolbarHeight: 0,
       ),
       body: Container(
         width: MediaQuery.of(context).size.width / 2,
@@ -148,22 +148,22 @@ class UserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-      padding: EdgeInsets.all(10),
-      height: 240,
+      padding: EdgeInsets.fromLTRB(10, 30, 10, 10),
+      height: 300,
       color: Theme.of(context).primaryColor,
       child: Column(
         children: [
           CircleAvatar(
             backgroundImage: AssetImage(
                 "assets/images/cute-engineer-character-cartoon-icon-illustration-vector.jpg"),
-            radius: 50,
+            radius: 70,
           ),
           Padding(
-            padding: EdgeInsets.only(top: 2),
+            padding: EdgeInsets.only(top: 15),
             child: Text(
               "ئەحمەد سەمیر سەلیم",
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 16,
                 fontFamily: "NRT",
                 color: Colors.white,
               ),
@@ -192,7 +192,7 @@ class UserInfo extends StatelessWidget {
                 child: Text(
                   "عراق/هەولێر",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     fontFamily: "NRT",
                     color: Colors.white,
                   ),

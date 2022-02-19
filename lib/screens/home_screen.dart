@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:first_assignment/dummy_data.dart';
-import 'package:first_assignment/widgets/home_screen_categories/category_item.dart';
 import 'package:first_assignment/widgets/home_screen_categories/categories_grid.dart';
 import 'package:first_assignment/widgets/navbar/custom_navbar.dart';
 import 'package:first_assignment/widgets/image_slider.dart';

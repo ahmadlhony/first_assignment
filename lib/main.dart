@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:first_assignment/screens/home_screen.dart';
 import 'package:first_assignment/screens/temp.dart';
-import 'package:first_assignment/screens/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

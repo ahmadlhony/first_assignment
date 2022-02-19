@@ -49,6 +49,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
+  // ignore: todo
   // TODO: implement preferredSize
   Size get preferredSize => new Size.fromHeight(60);
 }

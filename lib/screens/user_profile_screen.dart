@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:first_assignment/widgets/user_profile/call_us.dart';
 import 'package:first_assignment/widgets/user_profile/contact.dart';
 import 'package:first_assignment/widgets/user_profile/user_information.dart';
