@@ -63,7 +63,7 @@ class UserInformation extends StatelessWidget {
             child: UserIsFavorite(width: width),
           ),
           Positioned(
-            top: firstHight * 0.5,
+            top: firstHight * 0.45,
             left: 20,
             child: Container(
               decoration: BoxDecoration(
@@ -78,7 +78,7 @@ class UserInformation extends StatelessWidget {
                 ],
               ),
               child: CircleAvatar(
-                radius: 50,
+                radius: firstHight * 0.18,
                 backgroundImage: AssetImage(imagePath),
               ),
             ),
