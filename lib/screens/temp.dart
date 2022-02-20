@@ -21,7 +21,6 @@ class _TempScreenState extends State<TempScreen> {
     final width = MediaQuery.of(context).size.width;
     return Stack(
       clipBehavior: Clip.none,
-      // overflow: ,
       children: [
         Container(
           child: AppDrawer(),

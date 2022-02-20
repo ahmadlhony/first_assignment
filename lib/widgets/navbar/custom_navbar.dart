@@ -19,6 +19,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.vertical(
@@ -55,10 +56,10 @@ class _CustomNavbarState extends State<CustomNavbar> {
         });
       },
       child: Container(
-        width: 90,
+        width: 100,
         height: double.maxFinite,
         child: SizedBox(
-          width: 60,
+          width: 65,
           height: 40,
           child: Column(
             children: [
