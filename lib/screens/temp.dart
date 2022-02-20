@@ -1,5 +1,5 @@
 import 'package:first_assignment/screens/home_screen.dart';
-import 'package:first_assignment/widgets/app_drawer.dart';
+import 'package:first_assignment/widgets/drawer/app_drawer.dart';
 import 'package:flutter/material.dart';
 
 class TempScreen extends StatefulWidget {
