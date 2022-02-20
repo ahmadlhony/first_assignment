@@ -56,7 +56,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
         });
       },
       child: Container(
-        width: 100,
+        width: 90,
         height: double.maxFinite,
         child: SizedBox(
           width: 65,
@@ -94,16 +94,18 @@ class _CustomNavbarState extends State<CustomNavbar> {
                 ),
               ),
               Center(
-                child: Text(
-                  label,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: _isSelected(index) ? 13 : 12,
-                    fontWeight: _isSelected(index)
-                        ? FontWeight.bold
-                        : FontWeight.normal,
-                    color: Colors.white,
-                    letterSpacing: _isSelected(index) ? 1.1 : 1.0,
+                child: FittedBox(
+                  child: Text(
+                    label,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      // fontSize: _isSelected(index) ? 13 : 12,
+                      fontWeight: _isSelected(index)
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                      color: Colors.white,
+                      letterSpacing: _isSelected(index) ? 1.1 : 1.0,
+                    ),
                   ),
                 ),
               ),
